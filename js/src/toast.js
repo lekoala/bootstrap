@@ -111,6 +111,9 @@ class Toast extends BaseComponent {
     }
 
     const complete = () => {
+      if(this._element === null) {
+        return
+      }
       this._element.classList.add(CLASS_NAME_HIDE) // @deprecated
       this._element.classList.remove(CLASS_NAME_SHOWING, CLASS_NAME_SHOW)
       EventHandler.trigger(this._element, EVENT_HIDDEN)
